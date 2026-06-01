@@ -21,8 +21,9 @@
   body{background:radial-gradient(1200px 600px at 50% -10%, #1b2030 0%, var(--bg) 60%);
     color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     display:flex; flex-direction:column; min-height:100%;}
-  header{display:flex; align-items:center; gap:14px; padding:14px 20px; border-bottom:1px solid var(--line);
-    background:rgba(15,17,21,.7); backdrop-filter:blur(8px); position:sticky; top:0; z-index:5;}
+  header{display:flex; align-items:center; gap:14px; position:sticky; top:0; z-index:5;
+    padding:calc(14px + env(safe-area-inset-top)) calc(20px + env(safe-area-inset-right)) 14px calc(20px + env(safe-area-inset-left));
+    border-bottom:1px solid var(--line); background:rgba(15,17,21,.7); backdrop-filter:blur(8px);}
   header h1{font-size:16px; margin:0; font-weight:600; letter-spacing:.3px}
   header .sub{color:var(--muted); font-size:12px}
   .spacer{flex:1}
@@ -134,7 +135,8 @@
   .iconbtn .bi{display:none} .iconbtn .bl{display:inline}
   /* ---------- mobile ---------- */
   @media (max-width:680px){
-    header{padding:9px 12px; gap:8px 10px; flex-wrap:wrap}
+    header{gap:8px 10px; flex-wrap:wrap;
+      padding:calc(9px + env(safe-area-inset-top)) calc(12px + env(safe-area-inset-right)) 9px calc(12px + env(safe-area-inset-left))}
     header h1{font-size:15px}
     .sub{font-size:11px}
     .pill{font-size:11px; padding:4px 9px; order:3; flex-basis:100%}
@@ -159,7 +161,7 @@
     /* full-screen modals on phones */
     .overlay{padding:0; align-items:stretch}
     .modal{width:100%; min-height:100%; border-radius:0; border:none; margin:0}
-    .modalhead{padding:14px 16px}
+    .modalhead{padding:calc(14px + env(safe-area-inset-top)) 16px 14px}
     .modalbody{padding:14px 14px calc(24px + env(safe-area-inset-bottom))}
     .closex{width:40px; height:40px; font-size:20px}
     .statgrid{grid-template-columns:repeat(2,1fr); gap:10px}

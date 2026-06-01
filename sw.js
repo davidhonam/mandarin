@@ -1,6 +1,6 @@
 /* Service worker: offline app shell + on-demand audio caching.
    Bump VERSION to force clients to refetch the shell after an update. */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL_CACHE = 'mandarin-shell-' + VERSION;
 const AUDIO_CACHE = 'mandarin-audio-v1';   // audio is immutable; keep across shell updates
 const SHELL = [
